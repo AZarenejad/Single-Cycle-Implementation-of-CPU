@@ -1,0 +1,17 @@
+`timescale 1ns/1ns
+
+
+module alu( input[2:0] alu_operation , input[15:0] in1 , in2 , output[15:0] result , output zero_flag);
+  parameter [2:0] move = 3'b000 , add = 3'b001 , sub = 3'b010 , And = 3'b011 , Or = 3'b100 , Not = 3'b101 , nop = 3'b110 ;
+  
+  assign result = ( alu_operation == move) ? in2 :
+                  ( alu_operation == add ) ? in1 + in2 :
+                  ( alu_operation == sub ) ? in1 - in2 :
+                  ( alu_operation == And ) ? in1 & in2 :
+                  ( alu_operation == Or ) ? in1 | in2 :
+                  ( alu_operation == Not ) ? ~ in2 :
+                  ( alu_operation == nop ) ? in2 : 16'bz ;
+            
+  assign zero_flag = (result == 16'b0 ) ? 1 : 0;
+endmodule
+    

@@ -1,0 +1,98 @@
+E:/ut/term4/CA/ca/ca2/cu.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/cu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module cu
+
+Top level modules:
+	cu
+
+} {} {}} E:/ut/term4/CA/ca/ca2/complete_unit.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/complete_unit.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module CPU
+
+Top level modules:
+	CPU
+
+} {} {}} E:/ut/term4/CA/ca/ca2/test_alu.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/test_alu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module test_alu
+
+Top level modules:
+	test_alu
+
+} {} {}} E:/ut/term4/CA/ca/ca2/alu.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/alu.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} E:/ut/term4/CA/ca/ca2/test_register_file.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/test_register_file.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module test_register_file
+
+Top level modules:
+	test_register_file
+
+} {} {}} E:/ut/term4/CA/ca/ca2/multiplexer.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/multiplexer.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module multiplexer_3
+-- Compiling module multiplexer_2
+
+Top level modules:
+	multiplexer_3
+	multiplexer_2
+
+} {} {}} E:/ut/term4/CA/ca/ca2/dp.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/dp.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module dp
+
+Top level modules:
+	dp
+
+} {} {}} E:/ut/term4/CA/ca/ca2/register_file.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/register_file.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} E:/ut/term4/CA/ca/ca2/sign_extend.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/sign_extend.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module sign_extend_8_to_16
+-- Compiling module sign_extend_10_to_16
+
+Top level modules:
+	sign_extend_8_to_16
+	sign_extend_10_to_16
+
+} {} {}} E:/ut/term4/CA/ca/ca2/testbench.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/testbench.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module test_cpu
+
+Top level modules:
+	test_cpu
+
+} {} {}} E:/ut/term4/CA/ca/ca2/memory.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/memory.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module memory
+
+Top level modules:
+	memory
+
+} {} {}} E:/ut/term4/CA/ca/ca2/test_controller.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/test_controller.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module test_controller
+
+Top level modules:
+	test_controller
+
+} {} {}} E:/ut/term4/CA/ca/ca2/register.v {1 {vlog -work work E:/ut/term4/CA/ca/ca2/register.v
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module pc_register
+-- Compiling module window_register
+
+Top level modules:
+	pc_register
+	window_register
+
+} {} {}}

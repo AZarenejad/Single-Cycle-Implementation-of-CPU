@@ -1,0 +1,53 @@
+`timescale 1ns/1ns
+
+module cu (input [3:0] opcode ,
+  input [7:0] func ,
+  input zero_flag ,
+  output[2:0] alu_operation ,
+  output next_sel ,ld_window , branch_sel , jump_sel ,
+  output R_sel , imm_sel ,
+  output mem_sel , alu_sel , reg_write ,
+  output mem_read , mem_write);
+
+
+  
+  
+  parameter [2:0] move = 3'b000 , add=3'b001 , sub=3'b010 , And = 3'b011 , Or = 3'b100 , Not = 3'b101 , nop = 3'b110 ;
+  
+  
+ 
+  assign alu_operation =  ( opcode == 4'b1100 ) ?   add :
+                          ( opcode == 4'b1101 ) ?   sub :
+                          ( opcode == 4'b1110 ) ?   And :
+                          ( opcode == 4'b1111 ) ?   Or :
+                          ( opcode == 4'b0100 ) ?   sub : 
+                          ( opcode == 4'b1000 ) ?   func[0] ? move :
+                                                    func[1] ? add :
+                                                    func[2] ? sub :
+                                                    func[3] ? And :
+                                                    func[4] ? Or :
+                                                    func[5] ? Not :
+                                                    func[6] ? nop : 3'bzzz : 3'bzzz ;
+  
+  
+  assign next_sel = (opcode == 4'b0100) ? (~zero_flag) : (opcode == 4'b0010) ? 1'b0 : 1'b1 ;
+  assign ld_window = ( opcode == 4'b1000) ? func[7] ? 1 : 0 : 0 ;
+  assign R_sel =  (opcode == 4'b1000 & func[7:6] != 2'b01 & func[7 : 6] != 2'b10) |  (opcode == 4'b0100 ) ; 
+  assign imm_sel = (opcode == 4'b1100) | (opcode == 4'b1101) | (opcode == 4'b1110) | (opcode == 4'b1111) ;
+  assign mem_sel = (opcode == 4'b0000);
+  assign alu_sel = (opcode == 4'b1000 & func[7:6] != 2'b01 & func[7:6] != 2'b10) | 
+                  (opcode == 4'b1100) | (opcode == 4'b1101) | (opcode == 4'b1110) | ( opcode == 4'b1111);
+  
+  assign reg_write = (opcode == 4'b0000) | 
+                    (opcode == 4'b1000 & func[7 : 6] != 2'b01 & func[7 : 6] != 2'b10) |
+                    (opcode == 4'b1100) | (opcode == 4'b1101) | (opcode == 4'b1110) | (opcode == 4'b1111);
+  assign branch_sel =  (opcode == 4'b0100 & zero_flag) ;
+  assign jump_sel =  (opcode == 4'b0010 );
+  assign mem_write = (opcode == 4'b0001);
+  assign mem_read = (opcode == 4'b0000);
+  
+  
+                          
+endmodule
+                          
+  

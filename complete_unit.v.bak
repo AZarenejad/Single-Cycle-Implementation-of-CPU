@@ -1,0 +1,27 @@
+`timescale 1ns/1ns
+
+
+module CPU(input clk , rst);
+  
+
+  wire [3:0] opcode ;
+  wire [7:0] func ;
+  wire zero_flag ;
+  wire [2:0] alu_operation ;
+  wire next_sel , jump_sel , branch_sel ,ld_window ;
+  wire R_sel , imm_sel , mem_sel , alu_sel , mem_read , mem_write , reg_write ;
+  
+
+  
+
+  cu controller (opcode ,func ,zero_flag , alu_operation , next_sel , ld_window , branch_sel , jump_sel ,
+                  R_sel , imm_sel , mem_sel , alu_sel , reg_write , mem_read , mem_write);
+                  
+                  
+  dp datapath(clk, rst, next_sel, jump_sel, branch, 
+              ld_window, R_sel, imm_sel, mem_sel , alu_sel , 
+              reg_write , mem_read ,mem_write ,alu_operation ,opcode ,func);
+  
+endmodule
+
+

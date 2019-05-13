@@ -1,0 +1,34 @@
+`timescale 1ns/1ns
+module TB();
+  reg clk ,  reg_write ;
+  reg [1:0] window , ri ,rj ;
+  wire [15:0] read1,read2 ;
+  reg [15:0] writedata ;
+  register_file f (clk ,reg_write ,window , ri ,rj , writedata , read1, read2);
+  
+  initial begin
+    window = 2'b01 ;
+    ri = 2'b00 ; //2
+    rj = 2'b10 ; //4
+    clk = 0 ;
+    reg_write = 1 ;
+    writedata = 16'd5 ;
+    #10 ;
+    
+    clk = 1 ;
+    #10 ;
+    reg_write = 0 ;
+    clk=0 ;
+    #10 ;
+    reg_write = 1 ;
+    writedata = 16'd1 ;
+    clk=1 ;
+    #10 ;
+    reg_write = 0 ;
+    clk = 0;
+    #100;
+    $stop;
+  end
+  
+endmodule
+
